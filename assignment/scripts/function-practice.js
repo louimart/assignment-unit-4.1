@@ -71,17 +71,18 @@ console.log(getLast(array));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 array = [ 23, 43, 88, 16, 10, 5 ];
-function find(value, array) {
+function find(value, array2) {
   console.log('>>IN find')
   // for (let x=0; x<array.length; x++){
-  for (let x of array){
+  for (let x of array2){
     console.log(x);
-    // if (x === value){
-    //   return true;
-    // } else return false;
+    if (x === value){
+      return true;
+    }
   }
+  return false;
 }
-console.log(find(16, array))
+console.log(find(88, array))
 
 
 // ----------------------
@@ -90,17 +91,30 @@ console.log(find(16, array))
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  if (string.indexOf(letter) === 0){
+    console.log(`${letter} is the first letter in ${string}`);
+    return true;
+  }
+  console.log(`${letter} is NOT the first letter in ${string}`);
+  return false;
 }
-
+console.log(isFirstLetter('a', 'apple'));
+console.log(isFirstLetter('l', 'bell'));
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll(array) {
-  let sum = 0;
+// function sumAll(array1) {
+//   let sum = 0;
   // TODO: loop to add items
+//   for ( let i = 0 ; i < array1.lenght; i += 1 ){
+//     console.log('IN SUMALL')
+//     sum += array1[i];
+//     console.log(array[i]);
 
-  // TODO: return the sum
-}
+//     // console.log(sum);
+//   }
+//   // TODO: return the sum
+//   return sum;
+// } sumAll(array);
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
